@@ -1,0 +1,17 @@
+     1                                  SECTION .data
+     2 00000000 D0B0D185D0BCD0B5D0-         hello: DB 'ахмед метвалли',10
+     2 00000009 B420D0BCD0B5D182D0-
+     2 00000012 B2D0B0D0BBD0BBD0B8-
+     2 0000001B 0A                 
+     3                                      hellolen:   EQU $- hello
+     4                                  SECTION .text
+     5                                      GLOBAL _start
+     6                                  _start:
+     7 00000000 B804000000                  mov eax,4
+     8 00000005 BB01000000                  mov ebx,1 
+     9 0000000A B9[00000000]                mov ecx,hello
+    10 0000000F BA1C000000                  mov edx,hellolen
+    11 00000014 CD80                        int 80h
+    12 00000016 B801000000                  mov eax,1
+    13 0000001B BB00000000                  mov ebx,0
+    14 00000020 CD80                        int 80h
